@@ -1,7 +1,7 @@
 .intro {
     position: relative;
     overflow: hidden;
-    padding: 100px 0 40px;
+    padding: 90px 0 40px;
 
     @include media(">=tablet") {
         padding: 110px 0 80px;
@@ -12,7 +12,6 @@
     }
 
     .img-bg {
-        position: absolute;
         z-index: -1;
         top: 0;
         left: 0;
@@ -53,7 +52,7 @@
 
             @include media(">=tablet") {
                 font-size: 28px;
-                padding: 0;
+                padding-top: 0;
             }
 
             @include media(">=desktop") {
@@ -91,7 +90,7 @@
 }
 
 .logo-service {
-    width: 279px;
+    width: 220px;
     margin-bottom: 30px;
 
     img {
@@ -99,6 +98,7 @@
     }
 
     @include media(">=tablet") {
+        width: 279px;
         margin-bottom: 60px;
     }
 

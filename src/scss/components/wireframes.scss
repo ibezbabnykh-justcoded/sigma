@@ -1,6 +1,6 @@
 .wireframes {
     color: $white;
-    padding: 40px 0 0;
+    padding-top: 40px;
     background: url(../images/bg-wireframe.jpg);
     @include media("retina2x") {
         background: url(../images/bg-wireframe-2x.jpg);
@@ -11,7 +11,7 @@
     }
 
     @include media(">=desktop") {
-        padding: 94px 0 84px 0;
+        padding: 94px 0 84px;
     }
 
     h2 {
@@ -27,12 +27,12 @@
         margin-bottom: 30px;
 
         @include media(">=tablet") {
-            margin: 0;
+            margin-bottom: 0;
         }
     }
 
     .title-section {
-        max-width:450px;
+        max-width: 450px;
     }
 
     &-list {
@@ -72,7 +72,7 @@
     &-item {
         position: relative;
         width: 100%;
-        margin: 0 0 40px;
+        margin-bottom: 40px;
     
         &:after {
             content: '';
@@ -125,12 +125,11 @@
         @include media(">=tablet") {
             padding: 0 40px;
             width: 33.333%;
-            margin: 0 0 40px;
         }
     
         @include media(">=desktop") {
-            padding:0 68px;
-            margin:0 0 81px;
+            padding: 0 68px;
+            margin-bottom: 81px;
         }
     
         &:nth-child(2) {

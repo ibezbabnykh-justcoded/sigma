@@ -1,8 +1,12 @@
 .ticket-info {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     
     @include media(">=tablet") {
-        padding: 40px 0 99px;
+        padding-top: 40px;
+    }
+
+    @include media(">=desktop") {
+        padding-bottom: 109px;
     }
 
     .text-box {

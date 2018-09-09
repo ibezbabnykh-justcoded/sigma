@@ -10,7 +10,7 @@
 
   // When DOM is ready
   $(() => {
-    
+    $('.how-we-work h3').matchHeight();
   });
 
 })(jQuery);
