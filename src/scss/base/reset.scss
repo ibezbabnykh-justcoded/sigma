@@ -1,0 +1,83 @@
+// This is base reset for global components.
+//
+// Note: If you use a framework that includes base styling then you need to remove this file.
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+  @include font-smoothing(on);
+  @include media(">=tablet") {
+    font-size: $font-size-sm;
+  }
+  @include media(">=desktop") {
+    font-size: $font-size-lg;
+  }
+}
+
+// adaptive images
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+// google map fix
+.gm-style img {max-width: none;}
+
+//Base font styles for headings
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm * 4.125;
+  }
+}
+h2,
+.h2 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm * 3.125;
+  }
+}
+h3,
+.h3 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm * 2.25;
+  }
+}
+h4,
+.h4 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm * 1.625;
+  }
+}
+h5,
+.h5 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm;
+  }
+}
+h6,
+.h6 {
+  @include media(">=desktop") {
+    font-size: $font-size-sm * 0.778;
+  }
+}
+
+// hide tel links on desktop
+@media only screen and (min-width: 1025px) {
+    a[href^="tel"], a[href^="skype"], a[href^="sms"] {
+    cursor: default;
+    pointer-events: none;
+  }
+}
