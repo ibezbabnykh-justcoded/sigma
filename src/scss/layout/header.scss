@@ -1,23 +1,26 @@
 .header {
-    z-index: 5;
-    top: 0;
-    left: 0;
-    right: 0;
-    .container-fluid {
-        padding: 15px;
-        @include media(">=tablet") {
-            padding: 25px 30px;
-        }
-    
-        @include media(">=desktop") {
-            padding: 29px 44px;
-        }
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .container-fluid {
+    padding: 15px;
+
+    @include media(">=tablet") {
+      padding: 25px 30px;
     }
+
+    @include media(">=desktop") {
+      padding: 29px 44px;
+    }
+  }
 }
 
 .logo {
-    width: 131px;
-    img {
-        width: 100%;
-    }
+  width: 131px;
+
+  img {
+    width: 100%;
+  }
 }

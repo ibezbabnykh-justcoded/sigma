@@ -1,13 +1,13 @@
 .footer {
-    .container-fluid {
-        padding: 15px;
+  .container-fluid {
+    padding: 15px;
 
-        @include media(">=tablet") {
-            padding: 25px 30px;
-        }
-    
-        @include media(">=desktop") {
-            padding: 29px 38px;
-        }
+    @include media(">=tablet") {
+      padding: 25px 30px;
     }
+
+    @include media(">=desktop") {
+      padding: 29px 38px;
+    }
+  }
 }

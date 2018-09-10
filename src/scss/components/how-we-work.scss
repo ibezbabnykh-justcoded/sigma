@@ -1,140 +1,142 @@
 .how-we-work {
-    padding: 40px 0;
+  padding: 40px 0;
+
+  @include media(">=tablet") {
+    padding: 84px 0 80px;
+  }
+
+  @include media(">=desktop") {
+    padding: 85px 0 165px;
+  }
+
+  h2 {
+    color: $primary;
+    margin-bottom: 20px;
 
     @include media(">=tablet") {
-        padding: 84px 0 80px;
+      margin-bottom: 26px;
+    }
+  }
+
+  h2+p {
+    margin-bottom: 50px;
+
+    @include media(">=tablet") {
+      margin-bottom: 87px;
     }
 
     @include media(">=desktop") {
-        padding: 85px 0 165px;
+      margin-bottom: 86px;
+    }
+  }
+
+  .list {
+    >div {
+      &:first-child {
+        .holder {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      &:last-of-type {
+        .holder {
+          margin: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .holder {
+    position: relative;
+    padding: 0 15px 0 25px;
+    margin: 0 0 30px;
+
+    @include media(">=tablet") {
+      padding: 40px 0 0;
+      margin: 0;
     }
 
-    h2 {
-        color: $primary;
-        margin-bottom: 20px;
-        @include media(">=tablet") {
-            margin-bottom: 26px;
-        }
+    @include media(">=desktop") {
+      padding-top: 51px;
     }
 
-    h2 + p {
-        margin-bottom: 50px;
-
-        @include media(">=tablet") {
-            margin-bottom: 87px;
-        }
-
-        @include media(">=desktop") {
-            margin-bottom: 86px;
-        }
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
     }
 
-    .list {
-        > div {
-            &:first-child {
-                .holder {
-                    &:after {
-                        display: none;
-                    }
-                }
-            }
-            &:last-of-type {
-                .holder {
-                    margin: 0;
-                    &:before {
-                        display: none;
-                    }
-                }
-            }
-        }
+    &:after {
+      top: 3px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $primary;
+      box-shadow: 0 0 0 10px $white;
+
+      @include media(">=tablet") {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        box-shadow: 0 0 0 25px $white;
+      }
     }
 
-    .holder {
-        position: relative;
-        padding: 0 15px 0 25px;
-        margin: 0 0 30px;
+    &:before {
+      top: 0;
+      left: 7px;
+      bottom: -30px;
+      background-color: #e8e4e8;
+      width: 1px;
 
-        @include media(">=tablet") {
-            padding: 40px 0 0;
-            margin: 0;
-        }
-
-        @include media(">=desktop") {
-            padding-top: 51px;
-        }
-
-        &:after,
-        &:before {
-            content: '';
-            position: absolute;
-        }
-
-        &:after {
-            top: 3px;
-            left: 2px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: $primary;
-            box-shadow: 0 0 0 10px $white;
-
-            @include media(">=tablet") {
-                top: 0;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 15px;
-                height: 15px;
-                box-shadow: 0 0 0 25px $white;
-            }
-        }
-        
-        &:before {
-            top: 0;
-            left: 7px;
-            bottom: -30px;
-            background-color: #e8e4e8;
-            width: 1px;
-
-            @include media(">=tablet") {
-                top: 0;
-                left: 50%;
-                right: -50%;
-                bottom: auto;
-                height: 1px;
-                width: auto;
-            }
-        }
-
+      @include media(">=tablet") {
+        top: 0;
+        left: 50%;
+        right: -50%;
+        bottom: auto;
+        height: 1px;
+        width: auto;
+      }
     }
+  }
 
-    .icon-plain {
-        position: absolute;
-        top: -10px;
-        left: 3px;
-        transform: rotate(90deg);
-        z-index: 2;
-        font-size: 40px;
-        color: $primary;
+  .icon-plain {
+    position: absolute;
+    top: -10px;
+    left: 3px;
+    transform: rotate(90deg);
+    z-index: 2;
+    font-size: 40px;
+    color: $primary;
 
-        @include media(">=tablet") {
-            font-size: 50px;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(0);
-        }
+    @include media(">=tablet") {
+      font-size: 50px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0);
     }
+  }
 
-    h3 {
-        margin-bottom: 15px;
-        
-        @include media(">=desktop") {
-            margin-bottom: 29px;
-        }
-    }
+  h3 {
+    margin-bottom: 15px;
 
-    i {
-        line-height: 1.222;
-        display: block;
-        color: #c0c0c0;
+    @include media(">=desktop") {
+      margin-bottom: 29px;
     }
+  }
+
+  i {
+    line-height: 1.222;
+    display: block;
+    color: #c0c0c0;
+  }
 }

@@ -1,219 +1,222 @@
 .wireframes {
+  color: $white;
+  padding-top: 40px;
+  background: url(../images/bg-wireframe.jpg);
+
+  @include media("retina2x") {
+    background: url(../images/bg-wireframe-2x.jpg);
+  }
+
+  @include media(">=tablet") {
+    padding: 80px 0 40px;
+  }
+
+  @include media(">=desktop") {
+    padding: 94px 0 84px;
+  }
+
+  h2 {
     color: $white;
-    padding-top: 40px;
-    background: url(../images/bg-wireframe.jpg);
-    @include media("retina2x") {
-        background: url(../images/bg-wireframe-2x.jpg);
-    }
+    margin-bottom: 20px;
 
     @include media(">=tablet") {
-        padding: 80px 0 40px;
+      margin-bottom: 26px;
+    }
+  }
+
+  p {
+    margin-bottom: 30px;
+
+    @include media(">=tablet") {
+      margin-bottom: 0;
+    }
+  }
+
+  .title-section {
+    max-width: 450px;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media(">=tablet") {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: -112px -40px 0;
     }
 
     @include media(">=desktop") {
-        padding: 94px 0 84px;
+      margin: -136px -68px 0;
     }
 
-    h2 {
-        color: $white;
-        margin-bottom: 20px;
-
-        @include media(">=tablet") {
-            margin-bottom: 26px;
-        }
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      order: 0;
     }
 
-    p {
-        margin-bottom: 30px;
+    img {
+      width: 100%;
 
-        @include media(">=tablet") {
-            margin-bottom: 0;
-        }
+      @include media("<tablet") {
+        max-width: 70%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -28px;
+      width: 1px;
+      height: 20px;
+      background-color: $white;
+
+      @include media(">=tablet") {
+        top: 50%;
+        bottom: auto;
+        width: 40px;
+        left: -20px;
+        height: 1px;
+      }
+
+      @include media(">=desktop") {
+        left: -40px;
+        width: 80px;
+      }
     }
 
-    .title-section {
-        max-width: 450px;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      margin: 0 0 0 -3px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12px 3px 0 4px;
+      border-color: $white transparent transparent transparent;
+
+      @include media(">=tablet") {
+        top: 50%;
+        bottom: auto;
+        left: -22px;
+        margin: -3px 0 0;
+        border-width: 3px 12px 4px 0;
+        border-color: transparent $white transparent transparent;
+      }
+
+      @include media(">=desktop") {
+        left: -42px;
+      }
     }
 
-    &-list {
-        display: flex;
-        flex-wrap: wrap;
-    
-        @include media(">=tablet") {
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-            margin: -112px -40px 0;
-            
-        }
-    
+    @include media(">=tablet") {
+      padding: 0 40px;
+      width: 33.333%;
+    }
+
+    @include media(">=desktop") {
+      padding: 0 68px;
+      margin-bottom: 81px;
+    }
+
+    &:nth-child(2) {
+      order: 4 !important;
+
+      &~.wireframes-item {
+        order: 5;
+      }
+    }
+
+    &:nth-child(3) {
+      order: 3 !important;
+    }
+
+    &:nth-child(4) {
+      order: 2 !important;
+    }
+
+    &:nth-child(4),
+    &:first-child {
+      &:after {
+        top: auto;
+        left: 50%;
+        width: 1px;
+        background-color: $white;
+        bottom: -28px;
+        height: 20px;
+
         @include media(">=desktop") {
-            margin: -136px -68px 0;
+          bottom: -52px;
+          height: 27px;
         }
-    
-        &:after {
-            content: '';
-            display: block;
-            width: 100%;
-            order: 0;
-        }
-    
-        img {
-            width: 100%;
-    
-            @include media("<tablet") {
-                max-width: 70%;
-                margin: 0 auto;
-                display: block;
-            }
-        }
-    }
+      }
 
-    &-item {
-        position: relative;
-        width: 100%;
-        margin-bottom: 40px;
-    
-        &:after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -28px;
-            width: 1px;
-            height: 20px;
-            background-color: $white;
-            @include media(">=tablet") {
-                top: 50%;
-                bottom: auto;
-                width: 40px;
-                left: -20px;
-                height: 1px;
-            }
-    
-            @include media(">=desktop") {
-                left: -40px;
-                width: 80px;
-            }
-        }
-    
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            margin: 0 0 0 -3px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 12px 3px 0 4px;
-            border-color: $white transparent transparent transparent;
+      &:before {
+        top: auto;
+        bottom: -30px;
+        left: 50%;
+        margin: 0 0 0 -3px;
+        width: 0;
+        height: 0;
+        border-width: 12px 3px 0 4px;
+        border-color: $white transparent transparent transparent;
 
-            @include media(">=tablet") {
-                top: 50%;
-                bottom: auto;
-                left: -22px;
-                margin: -3px 0 0;
-                border-width: 3px 12px 4px 0;
-                border-color: transparent $white transparent transparent;
-            }
-
-            @include media(">=desktop") {
-                left: -42px;
-            }
-        }
-    
-        @include media(">=tablet") {
-            padding: 0 40px;
-            width: 33.333%;
-        }
-    
         @include media(">=desktop") {
-            padding: 0 68px;
-            margin-bottom: 81px;
+          bottom: -53px;
         }
-    
-        &:nth-child(2) {
-            order: 4 !important;
-            & ~  .wireframes-item {
-                order: 5;
-            }
-        }
-    
-        &:nth-child(3) {
-            order: 3 !important;
-        }
-    
-        &:nth-child(4) {
-            order: 2 !important;
-        }
-    
-        &:nth-child(4), &:first-child {
-    
-            &:after {
-                top: auto;
-                left: 50%;
-                width: 1px;
-                background-color: $white;
-                bottom: -28px;
-                height: 20px;
-    
-                @include media(">=desktop") {
-                    bottom: -52px;
-                    height: 27px;
-                }
-            }
-    
-            &:before {
-                top: auto;
-                bottom: -30px;
-                left: 50%;
-                margin: 0 0 0 -3px;
-                width: 0;
-                height: 0;
-                border-width: 12px 3px 0 4px;
-                border-color: $white transparent transparent transparent;
-    
-                @include media(">=desktop") {
-                    bottom: -53px;
-                }
-            }
-        }
-    
-        &:nth-child(5), &:nth-child(6) {
-            &:after {
-    
-                @include media(">=tablet") {
-                    right:-20px;
-                    left: auto;
-                }
-    
-                @include media(">=desktop") {
-                    right:-40px;
-                }
-            }
-    
-            &:before {
-    
-                @include media(">=tablet") {
-                    right:-22px;
-                    left: auto;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 3px 0 4px 12px;
-                    border-color: transparent transparent transparent $white;
-                }
-    
-                @include media(">=desktop") {
-                    right:-42px;
-                }
-            }
-        }
-    
-        &:last-of-type {
-            &:after, &:before {
-                display: none;
-            }
-        }
+      }
     }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      &:after {
+        @include media(">=tablet") {
+          right: -20px;
+          left: auto;
+        }
+
+        @include media(">=desktop") {
+          right: -40px;
+        }
+      }
+
+      &:before {
+        @include media(">=tablet") {
+          right: -22px;
+          left: auto;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 0 4px 12px;
+          border-color: transparent transparent transparent $white;
+        }
+
+        @include media(">=desktop") {
+          right: -42px;
+        }
+      }
+    }
+
+    &:last-of-type {
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
